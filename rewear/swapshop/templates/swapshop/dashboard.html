@@ -20,6 +20,37 @@
       </div>
     </div>
   </div>
+  <div class="row g-4">
+  {% for product in products %}
+  <div class="col-md-4">
+    <div class="card product-card">
+      <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" style="height: 200px; object-fit: cover;">
+      <div class="card-body">
+        <h6 class="card-title">{{ product.name }}</h6>
+        <p class="text-muted small">₹{{ product.price }}</p>
+        <p class="text-muted small mb-1">Reports: {{ product.report_count }}</p>
+
+        <!-- Optional Availability Status -->
+        {% if product.is_available %}
+          <span class="badge bg-success">Available</span>
+        {% else %}
+          <span class="badge bg-secondary">Not Available</span>
+        {% endif %}
+
+        <!-- Action Buttons -->
+        <div class="mt-2">
+          <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-outline-primary">Edit</a>
+          <a href="{% url 'delete_product' product.id %}" class="btn btn-sm btn-outline-danger">Delete</a>
+          <a href="{% url 'report_product' product.id %}" class="btn btn-sm btn-outline-warning">Report</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <p>No products found.</p>
+  {% endfor %}
+</div>
+
 
   <hr class="my-4">
 
