@@ -41,3 +41,9 @@ def userlogin(request):
 def userlogout(request):
     logout(request)
     return redirect('shop')
+
+def dashboard(request):
+    return render(request,'swapshop/dashboard.html')
+
+def item(request):
+    return render(request,'swapshop/item.html')

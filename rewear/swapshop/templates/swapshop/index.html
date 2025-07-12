@@ -1,0 +1,144 @@
+{% extends 'swapshop/base.html' %}
+
+{% block contant%}
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
+  <a class="navbar-brand" href="/swapshop/index/">ReWear</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="/swapshop/login/">Login</a></li>
+      <li class="nav-item"><a class="nav-link" href="/swapshop/register/">Sign Up</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero-section">
+  <h1>Shop or Sell Preloved Fashion</h1>
+  <p>Buy and sell gently-used clothes with ease</p>
+
+  <form class="d-flex justify-content-center mt-4 search-bar">
+    <input class="form-control me-2" type="search" placeholder="Search items..." aria-label="Search">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+</div>
+
+<!-- Categories -->
+<div class="container my-5">
+  <h4 class="mb-3">Categories</h4>
+  <div class="row g-3">
+    <div class="col-6 col-md-3">
+      <div class="category-card">Men</div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="category-card">Women</div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="category-card">Kids</div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="category-card">Accessories</div>
+    </div>
+  </div>
+</div>
+
+<!-- Featured Listings Carousel -->
+<div class="container my-5">
+  <h4 class="mb-3">Featured Listings</h4>
+  <div id="featuredCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://via.placeholder.com/800x300" class="d-block w-100" alt="Featured 1">
+      </div>
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/800x300" class="d-block w-100" alt="Featured 2">
+      </div>
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/800x300" class="d-block w-100" alt="Featured 3">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+
+
+<!-- Product Listings -->
+<div class="container mb-5">
+  <h4 class="mb-3">Latest Products</h4>
+  <div class="row g-4">
+    <div class="col-6 col-md-3">
+      <div class="product-card">
+        <a href="/swapshop/item/">
+          <img src="https://via.placeholder.com/200" alt="Product Image"></a>
+        <div class="card-body">
+          <h6>Denim Jacket</h6>
+          <p class="text-muted small">₹499</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="Product Image">
+        <div class="card-body">
+          <h6>Floral Dress</h6>
+          <p class="text-muted small">₹699</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="Product Image">
+        <div class="card-body">
+          <h6>Sneakers</h6>
+          <p class="text-muted small">₹899</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="Product Image">
+        <div class="card-body">
+          <h6>Leather Bag</h6>
+          <p class="text-muted small">₹1099</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Trust Section -->
+<div class="container mb-5">
+  <h4 class="mb-3 text-center">Why Trust ReWear?</h4>
+  <div class="row text-center">
+    <div class="col-md-4">
+      <img src="https://via.placeholder.com/80" class="mb-2" alt="Secure">
+      <h6>Secure Payments</h6>
+      <p class="text-muted small">All transactions are protected & encrypted.</p>
+    </div>
+    <div class="col-md-4">
+      <img src="https://via.placeholder.com/80" class="mb-2" alt="Verified Sellers">
+      <h6>Verified Sellers</h6>
+      <p class="text-muted small">We vet all sellers to ensure item quality.</p>
+    </div>
+    <div class="col-md-4">
+      <img src="https://via.placeholder.com/80" class="mb-2" alt="Eco Friendly">
+      <h6>Eco-Friendly</h6>
+      <p class="text-muted small">Join the movement — reduce textile waste.</p>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock contant%}

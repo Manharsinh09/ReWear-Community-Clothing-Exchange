@@ -1,0 +1,63 @@
+{% extends 'swapshop/base.html' %}
+
+{% block contant %}
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
+  <a class="navbar-brand" href="/swapshop/index/">ReWear</a>
+  <div class="collapse navbar-collapse justify-content-end">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="/swapshop/index/">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="/swapshop/login/">Login</a></li>
+      <li class="nav-item"><a class="nav-link" href="/swapshop/register/">Sign Up</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Product Detail -->
+<div class="container my-5">
+  <div class="row g-4">
+    <!-- Image + Thumbnails -->
+    <div class="col-md-6">
+      <img id="mainImage" src="https://via.placeholder.com/600x400" class="product-image mb-3" alt="Main Product Image">
+      <div class="row g-2">
+        <div class="col-4">
+          <img src="https://via.placeholder.com/150" class="thumb-img active" onclick="changeImage(this)" alt="Thumb">
+        </div>
+        <div class="col-4">
+          <img src="https://via.placeholder.com/150/ff9999" class="thumb-img" onclick="changeImage(this)" alt="Thumb">
+        </div>
+        <div class="col-4">
+          <img src="https://via.placeholder.com/150/66ccff" class="thumb-img" onclick="changeImage(this)" alt="Thumb">
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Info -->
+    <div class="col-md-6">
+      <h2>Vintage Denim Jacket</h2>
+      <p class="price">₹499</p>
+      <p><strong>Condition:</strong> Gently Used</p>
+      <p><strong>Size:</strong> Medium</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Great fit and lightweight — perfect for layering.
+      </p>
+
+      <button class="btn btn-success mt-3">Buy Now</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function changeImage(element) {
+    const mainImage = document.getElementById('mainImage');
+    const thumbnails = document.querySelectorAll('.thumb-img');
+
+    thumbnails.forEach(img => img.classList.remove('active'));
+    element.classList.add('active');
+
+    mainImage.src = element.src;
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock contant %}
