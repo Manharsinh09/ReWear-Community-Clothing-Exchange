@@ -1,7 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
+from .models import Categories,Product,SubCategories
+from django.utils import timezone
+
 # Create your views here.
 def index(request):
     return render(request,'swapshop/index.html')
@@ -31,7 +34,7 @@ def userlogin(request):
         user = authenticate(request,username=username,password=upass1)
         if user is not None:
             login(request,user)
-            return redirect('shop')
+            return redirect('index')
         else:
             return redirect('userlogin')
 
@@ -40,10 +43,53 @@ def userlogin(request):
 
 def userlogout(request):
     logout(request)
-    return redirect('shop')
+    return redirect('index')
 
 def dashboard(request):
     return render(request,'swapshop/dashboard.html')
 
 def item(request):
     return render(request,'swapshop/item.html')
+
+def addProduct(request):
+    categories = Categories.objects.all()
+    subcategories = SubCategories.objects.all()
+    return render(request,'swapshop/add-product.html',{'categories': categories,'subcategories': subcategories})
+
+
+
+def addIteam(request):
+    if request.method == 'POST':  
+        name = request.POST.get('name')
+        price = request.POST.get('price')
+        desc = request.POST.get('desc')
+        image = request.FILES.get('image') 
+        categary_id = request.POST.get('categary')
+        subCategary_id = request.POST.get('subCategary')
+        categary = Categories.objects.get(id=categary_id)
+        subCategary = SubCategories.objects.get(id=subCategary_id)
+
+        Product.objects.create(
+            name=name,
+            price=price,
+            desc=desc,
+            image=image,
+            pub_date=timezone.now(),
+            categary=categary,
+            subCategary=subCategary,
+            is_available=True,
+            report_count=0
+        )
+
+        return redirect('dashboard')
+
+        
+
+    categories = Categories.objects.all()
+    subcategories = SubCategories.objects.all()
+    return render(request, 'swapshop/add-product.html', {
+        'categories': categories,
+        'subcategories': subcategories
+    })
+
+    

@@ -1,0 +1,22 @@
+{% block contant%}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
+  <a class="navbar-brand" href="/swapshop/index/">ReWear</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+       {% if user.is_authenticated %}                            
+        <li class="nav-item"><a>{{user}} </a></li> 
+        <li class="nav-item"><a class="btn btn-outline-dark btn-sm ms-2" href=" {% url "userlogout" %} ">Logout</a></li>
+        <li class="nav-item"><a class="btn btn-outline-dark btn-sm ms-2"  href=" {% url "dashboard" %} ">dashboard</a></li>
+        
+        {% else %}
+        <li class="nav-item"><a class="btn btn-outline-dark btn-sm ms-2" href=" {% url "userlogin" %}">Login</a></li>
+        {% endif %}
+    </ul>
+  </div>
+</nav>
+
+{% endblock contant%}

@@ -7,5 +7,6 @@ urlpatterns = [
     path('singup/',views.usersingup,name="usersingup"),
     path('logout/',views.userlogout,name="userlogout"),
     path('dashboard/',views.dashboard,name="dashboard"),
-    path('item/',views.item,name="item"),
+    path('add-product/',views.addProduct,name="addProduct"),
+    path('addIteam/',views.addIteam,name="addIteam"),
 ]
