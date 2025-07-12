@@ -2,78 +2,55 @@
 
 ## 🌱 Overview
 
-**ReWear** is a web-based platform that enables users to exchange unused clothing through **direct swaps** or a **point-based redemption** system. Our mission is to promote **sustainable fashion** by encouraging users to **reuse wearable garments** instead of discarding them — reducing textile waste and promoting a circular economy.
+Develop **ReWear**, a web-based platform that enables users to exchange unused clothing through direct swaps or a point-based redemption system. The goal is to promote sustainable fashion and reduce textile waste by encouraging users to reuse wearable garments instead of discarding them.
 
 ---
 
 ## 🚀 Features
 
 ### 🔐 User Authentication
-- Email/Password Signup & Login
+- Email/Password signup and login
 
 ### 🏠 Landing Page
-- Platform introduction
+- Platform introduction  
 - Calls-to-action:
-  - “Start Swapping”
-  - “Browse Items”
-  - “List an Item”
+  - "Start Swapping"
+  - "Browse Items"
+  - "List an Item"
 - Featured items carousel
 
 ### 👤 User Dashboard
-- View profile details and points balance
-- Overview of uploaded items
-- List of ongoing and completed swaps
+- Profile details and points balance  
+- Uploaded items overview  
+- Ongoing and completed swaps list
 
 ### 📦 Item Detail Page
-- Image gallery
-- Full item description
-- Uploader information
-- Options to:
-  - **Swap Request**
-  - **Redeem via Points**
-- Availability status
+- Image gallery and full item description  
+- Uploader info  
+- Options: "Swap Request" or "Redeem via Points"  
+- Item availability status
 
 ### ➕ Add New Item Page
-- Upload item images
-- Enter:
-  - Title
-  - Description
-  - Category
-  - Type
-  - Size
-  - Condition
-  - Tags
-- Submit item for listing
+- Upload images  
+- Enter title, description, category, type, size, condition, and tags  
+- Submit to list
 
 ### 🛠️ Admin Role
-- Moderate & approve/reject items
-- Remove inappropriate/spam content
-- Lightweight admin panel for platform oversight
+- Moderate and approve/reject item listings  
+- Remove inappropriate or spam items  
+- Lightweight admin panel for oversight
 
 ---
 
-## 🧪 Mockups
+## 🎨 Mockup Link
 
-📎 **Excalidraw Mockup** – [Link to Wireframes/Designs (if hosted)](https://your-design-link-here.com)
+📎[Excalidraw Mockup](https://app.excalidraw.com/l/65VNwvy7c4X/zEqG7IJrg0)
 
 ---
 
 ## 👥 Team
 
-**Team Name:** Binary Beasts
+**Team Name:** Binary Beasts  
 
-- 👨‍💻 Manhar Chauhan  
+- 👨‍💻 Manharsinh Chauhan  
 - 👨‍💻 Krupal Bhoi
-
----
-
-## 💡 Tech Stack (Planned)
-- HTML, CSS, Bootstrap, JavaScript (Frontend)
-- Node.js / Express (Optional Backend)
-- MongoDB / Firebase / LocalStorage (Optional Storage layer)
-
----
-
-## 📃 License
-This project is open-source and free to use for educational or non-commercial purposes.
-
