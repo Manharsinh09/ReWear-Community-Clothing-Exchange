@@ -1,0 +1,73 @@
+{% extends 'swapshop/base.html' %}
+
+{% block contant %}
+
+ <div class="login-wrap">
+    <div class="container" id="container">
+
+        <div class="form-container sign-up-container">
+            <form action="" method="post">
+                {% csrf_token %} 
+                <input type="text" class="form-control" id="Firstname" placeholder="Firstname" name="Firstname">
+                <input type="text" class="form-control" id="Lastname" placeholder="Lastname" name="Lastname">
+                <input type="text" class="form-control" id="inputEmail4" placeholder="Username" name="Username">
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Password" name="Password">
+                <input type="email" class="form-control" id="inputAddress" placeholder="123@gmail.com" name="Email">
+                <button type="submit" id="submit_singup" class="btn btn-primary">Sign Up</button>
+            </form>
+        </div>
+
+        <div class="form-container sign-in-container">
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" class="form-control" name="Username" aria-describedby="emailHelp" placeholder="Enter Username">
+                <input type="password" name="Password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <button type="submit" class="btn btn-primary">Sing In</button>
+            </form>
+        </div>
+      
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p>To keep connected with us please login with your personal info</p>
+            <button class="ghost" id="signIn">Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details and start journey with us</p>
+            <button class="ghost" id="signUp">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+   
+    
+
+    signUpButton.addEventListener('click', () => {
+      container.classList.add("right-panel-active");
+      window.history.pushState({},'','http://127.0.0.1:8000/swapshop/singup/')      
+    });
+
+    signInButton.addEventListener('click', () => {
+      container.classList.remove("right-panel-active");
+      window.history.pushState({},'','http://127.0.0.1:8000/swapshop/login/')
+
+    });
+
+    if (window.location.href.includes('http://127.0.0.1:8000/swapshop/login/')) {
+      container.classList.remove("right-panel-active");
+    } 
+    else{
+        container.classList.add("right-panel-active");
+    }
+
+    
+  </script>
+{% endblock contant %}
